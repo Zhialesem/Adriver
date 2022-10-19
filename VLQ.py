@@ -101,11 +101,13 @@ try:
 
 except FileNotFoundError:
     print("Невозможно открыть файл")
+print('List=',list)
 
 string_join=''.join(list)#объединили в строку
+print ( 'string_join=', string_join )
 string_join = string_join.replace('0b','')#выкинули 0b
 file_list = [0 if c == '0' else 1 for c in string_join]#собрали из строки битовый список
-
+print ( 'file_list=', file_list )
 #----------------------------------------------------------------------
 #Анализ файла, преобразованного в массив
 #
@@ -141,12 +143,12 @@ print ( string_join )
 
 
 try:
-     file=open("string.bin", "wb")
+ #    file=open("string.bin", "wb")
      bin_result = ''.join(format(ord(x), '08b') for x in string_join)
      print ( bin_result )
 #    bin_result1=bytes(bin_result)
 #    print ( bin_result1 )
-     file.write(bin_result)
+    # file.write(bin_result)
 
 except FileNotFoundError:
           print("Невозможно открыть файл")
